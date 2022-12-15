@@ -1,4 +1,4 @@
-header {
+/* header {
     flex: 0 1 auto;
     background: tomato;
     min-height: 50px; 
@@ -19,4 +19,4 @@ header {
     flex: 0 1 60px;
     background: lightgreen;
     /* fixes the footer: min-height: 60px; */
-  }
+  } */
