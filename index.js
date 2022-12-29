@@ -1,36 +1,3 @@
-// var cvs = document.querySelectorAll("#canvas")
-
-
-
-// const bird = new Image();
-// var bg = new Image(); 
-// var fg = new Image(); 
-// var pipeNorth = new Image(); 
-// var pipeSouth = new Image(); 
-
-
-// bird.src = "images/bird.png"; 
-// bg.src = "images/bg.png"; 
-// fg.src = "images/fg.png"; 
-// pipeNorth.src = "images/pipeNorth.png"; 
-// pipeSouth.src = "images/pipeSouth.png"; 
-
-// var gap = 75; 
-// var constant = pipeNorth.height + gap; 
-
-// function draw() { 
-//     ctx.drawImage(bg, 0, 0);
-
-//     ctx.drawImage(pipeNorth, 100, 0)
-//     ctx.drawImage(pipeSouth, 100, 0 + constant); 
-    
-//     ctx.drawImage(fg, 0, cvs.height - fg.height); 
-
-// }  
-// draw(); 
-
-// ctx.drawImage(bg, 0, 0); 
-
 ctx = cvs.getContext("2d"); // id cvs / canvas gets placed into variable named ctx 
 const bird = new Image(); // assigning  bird to recieve a new image 
 bird.src = "images/bird.png"; // sourcing my bird sprite 
@@ -69,3 +36,38 @@ setInterval(() => {
     || birdY > canvasSize) &&  // bird falls off screen 
     ((birDY = 0), (birdY = 200), (pipeX = canvasSize), (score = 0)); // bird dies score restarts to 0 
 }, interval)
+
+
+
+// var cvs = document.querySelectorAll("#canvas")
+
+
+
+// const bird = new Image();
+// var bg = new Image(); 
+// var fg = new Image(); 
+// var pipeNorth = new Image(); 
+// var pipeSouth = new Image(); 
+
+
+// bird.src = "images/bird.png"; 
+// bg.src = "images/bg.png"; 
+// fg.src = "images/fg.png"; 
+// pipeNorth.src = "images/pipeNorth.png"; 
+// pipeSouth.src = "images/pipeSouth.png"; 
+
+// var gap = 75; 
+// var constant = pipeNorth.height + gap; 
+
+// function draw() { 
+//     ctx.drawImage(bg, 0, 0);
+
+//     ctx.drawImage(pipeNorth, 100, 0)
+//     ctx.drawImage(pipeSouth, 100, 0 + constant); 
+    
+//     ctx.drawImage(fg, 0, cvs.height - fg.height); 
+
+// }  
+// draw(); 
+
+// ctx.drawImage(bg, 0, 0); 
