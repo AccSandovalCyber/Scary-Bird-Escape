@@ -1,5 +1,8 @@
-ctx = cvs.getContext("2d"); // id cvs / canvas gets placed into variable named ctx 
+const canvas = document.getElementById ("cvs");
+const ctx = canvas.getContext("2d"); // id cvs / canvas gets placed into variable named ctx
+
 const bird = new Image(); // assigning  bird to recieve a new image 
+
 bird.src = "images/bird.png"; // sourcing my bird sprite 
 
 
@@ -8,10 +11,11 @@ interval = birdSize = pipeWidth = topPipeBottomY = 24;
 
 birdY = pipeGap = 150; // 
 canvasSize = pipeX = 400;
-cvs.onclick = () => (birDY = 9) // onclick method fly set to 9 
+canvas.onclick = () => (birDY = 9); // onclick method fly set to 9 
 
 setInterval(() => {
     ctx.fillStyle = "skyblue";
+    
     ctx.fillRect(0, 0, canvasSize, canvasSize); // draw sky 
     birdY -= birDY -= 0.5;   // gravity is set to 0.5 
     ctx.drawImage(bird, birdX, birdY, birdSize * (524 / 374), birdSize); //draw bird 
@@ -21,27 +25,49 @@ setInterval(() => {
     pipeX -= 8; // speed (left to right) set to 5 // 
 
     pipeX < -pipeWidth &&
-    ((pipeX = canvasSize), (topPipeBottomY = pipeGap * Math.random()));
+        ((pipeX = canvasSize), (topPipeBottomY = pipeGap * Math.random()));
     ctx.fillRect(pipeX, 0, pipeWidth, topPipeBottomY); // draw top pipe  
     ctx.fillRect(pipeX, topPipeBottomY + pipeGap, pipeWidth, canvasSize); // draw bottom pipe 
 
     ctx.fillStyle = "black"; // score count collor 
-    bestScore = bestScore < score ? score : bestScore; 
+    bestScore = bestScore < score ? score : bestScore;
     ctx.fillText(score++, 9, 25); // score count & x y positions 
-    ctx.fillStyle = "blue"; 
+    ctx.fillStyle = "blue";
     ctx.fillText(`Best Score : ${bestScore}`, 9, 50); //bestScore x y positions 
-    console.log(bestScore); 
+    console.log(bestScore);
    
     (((birdY < topPipeBottomY || birdY > topPipeBottomY + pipeGap) && pipeX < birdSize * (524 / 374)) // bird hit pipe 
-    || birdY > canvasSize) &&  // bird falls off screen 
-    ((birDY = 0), (birdY = 200), (pipeX = canvasSize), (score = 0)); // bird dies score restarts to 0 
-}, interval)
+        || birdY > canvasSize) &&  // bird falls off screen 
+        ((birDY = 0), (birdY = 200), (pipeX = canvasSize), (score = 0)); // bird dies score restarts to 0 
+}, interval);
 
 
 
-// var cvs = document.querySelectorAll("#canvas")
 
+// function startGame() {
+//     let startDiv = document.getElementById("start");
+//     let gameCanvas = document.getElementById("cvs");
+//     let gameOver = document.getElementById("game-over");
 
+//     startDiv.style.display = "none";
+//     gameCanvas.style.display = "block";
+//     gameOver.style.display = "none";
+//     start();
+// }
+
+// function gameOver() {
+//     let startDiv = document.getElementById("start");
+//     let gameCanvas = document.getElementById("cvs");
+//     let gameOver = document.getElementById("game-over");
+
+//     startDiv.style.display = "none";
+//     gameCanvas.style.display = "none";
+//     gameOver.style.display = "block";
+
+//     ball.reset();
+//     player1.reset();
+//     player2.reset();
+// }
 
 // const bird = new Image();
 // var bg = new Image(); 

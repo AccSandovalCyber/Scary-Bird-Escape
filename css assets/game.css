@@ -1,6 +1,6 @@
-body {
+/* body {
   color: #ffffff;
-  background-color: #1bafdb;
+  background-color: rgba(0,136,169,1)
 }
 
 #start,
@@ -34,4 +34,4 @@ display: inline-block;
 #start a:hover, #game-over a:hover {
     background-color: #ffffff;
     color: #1bafdb; 
-}
+} */
