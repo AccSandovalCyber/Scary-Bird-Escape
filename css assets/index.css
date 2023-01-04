@@ -1,16 +1,85 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+#game {
+  height: 900px;
+  width: 950px; 
+  background-image: url('/images/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  border: 4px solid black; 
+  border-radius: 2.5em;
+  margin-left: 5%;
+  margin-top: 5%; 
+  overflow: hidden;
+  position: relative;
+}
+
 
 body {
-  text-align: center;
   background-color: #145a6b;
 }
 
+#pipe1 {
+  position: absolute;
+  width: 50px;
+  height: 50%;
+  background-image: url('/images/pipeSouth.png');
+  transform: rotate(180deg); 
+
+}
+
+#pipe2 {
+  position: absolute;
+  width: 50px;
+  height: 30%;
+  top: 80%;
+  background-image: url('/images/pipeSouth.png');
+}
+
+.obs {
+  left: 95%;
+  animation: move 4s ease-in-out infinite;
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+@keyframes move {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -6%; 
+  }
+}
+
+#bird {
+  position: absolute;
+  top: 200px; 
+  left: 90px;
+}
+
+#bird img{
+  height: 60px;
+  width: 80px;
+}
+
+#score {
+  color: white; 
+  font-size: x-large;
+  font-weight: bold; 
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+
 canvas {
   height: 60vh;
-  border: 2.5px solid skyblue;
+  border: 1px solid  #24252a;
   border-radius: 2em;
   cursor: pointer;
-  margin: 5em;
+  margin: 3em; 
 }
 
 * {
@@ -19,18 +88,23 @@ canvas {
   padding: 0;
 }
 
-.header-class {
+.header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 30px 10%;
+  padding: 25px 5%;
   background-color: #24252a;
+  margin-left: 0%;
+  margin-top: 0%;
+  margin-right: 0%;
+
+
 }
 
 li ,a ,button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1em;
   color: #edf0f1;
   text-decoration: none; 
 }
@@ -62,4 +136,4 @@ button {
 button:hover {
   color: rgb(60, 185, 32); 
 
-}
+} 

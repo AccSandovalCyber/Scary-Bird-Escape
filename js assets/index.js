@@ -1,45 +1,108 @@
-const canvas = document.getElementById ("cvs");
-const ctx = canvas.getContext("2d"); // id cvs / canvas gets placed into variable named ctx
+const cvs = document.getElementById ("canvas"); // select canvas id 
+const ctx = canvas.getContext("2d"); 
 
-const bird = new Image(); // assigning  bird to recieve a new image 
+let frames = 0; // game vars & consts 
 
-bird.src = "images/bird.png"; // sourcing my bird sprite 
+const sprite = new Image();  // load sprite images 
+sprite.src = "images/bg.png"; 
 
+var bg = new Image(); 
+bg.src = "images/bg.png"; 
 
-birdX = birDY = score = bestScore = 0; // assigning restart values 
-interval = birdSize = pipeWidth = topPipeBottomY = 24;
-
-birdY = pipeGap = 150; // 
-canvasSize = pipeX = 400;
-canvas.onclick = () => (birDY = 9); // onclick method fly set to 9 
-
-setInterval(() => {
-    ctx.fillStyle = "skyblue";
+var bg = {
+    sX: 0, 
+    sY: 0,
+    w: 275, 
+    h : 226, 
+    x : 0, 
+    y : cvs.height - 226, 
     
-    ctx.fillRect(0, 0, canvasSize, canvasSize); // draw sky 
-    birdY -= birDY -= 0.5;   // gravity is set to 0.5 
-    ctx.drawImage(bird, birdX, birdY, birdSize * (524 / 374), birdSize); //draw bird 
+    draw : () => {
+        ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
+
+        ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x + this.w, this.y, this.w, this.h);
+    }
+}
+
+
+draw = () => {
+    ctx.fillStyle = "#70c5ce"; 
+    ctx.fillRect(0, 0, cvs.width, cvs.height); 
+
+    bg.draw; 
+
+
+} // draw function 
+
+
+update = () => {
+    
+} // update 
+
+loop = () => {
+    update(); 
+    draw(); 
+    frames++; 
+
+    requestAnimationFrame(loop);
+} // loop 
+loop(); 
+
+// ctx.drawImage(sprite, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight); // sprite & destination positions (X & Y) (Width & Height)
+
+
+
+
+
+
+// const bird = new Image(); // assigning  bird to recieve a new image 
+
+// bird.src = "images/bird.png"; // sourcing my bird sprite 
+
+
+// birdX = birDY = score = bestScore = 0; // assigning restart values 
+// interval = birdSize = pipeWidth = topPipeBottomY = 24;
+
+// birdY = pipeGap = 150; // 
+// canvasSize = pipeX = 400;
+// canvas.onclick = () => (birDY = 9); // onclick method fly set to 9 
+
+// setInterval(() => {
+//     // ctx.fillStyle = "skyblue";
+    
+//     // ctx.fillRect(0, 0, canvasSize, canvasSize); // draw sky 
+//     birdY -= birDY -= 0.5;   // gravity is set to 0.5 
+//     ctx.drawImage(bird, birdX, birdY, birdSize * (524 / 374), birdSize); //draw bird 
 
    
-    ctx.fillStyle = "seagreen";
-    pipeX -= 8; // speed (left to right) set to 5 // 
+//     ctx.fillStyle = "seagreen";
+//     pipeX -= 8; // speed (left to right) set to 5 // 
 
-    pipeX < -pipeWidth &&
-        ((pipeX = canvasSize), (topPipeBottomY = pipeGap * Math.random()));
-    ctx.fillRect(pipeX, 0, pipeWidth, topPipeBottomY); // draw top pipe  
-    ctx.fillRect(pipeX, topPipeBottomY + pipeGap, pipeWidth, canvasSize); // draw bottom pipe 
+//     pipeX < -pipeWidth &&
+//         ((pipeX = canvasSize), (topPipeBottomY = pipeGap * Math.random()));
+//     ctx.fillRect(pipeX, 0, pipeWidth, topPipeBottomY); // draw top pipe  
+//     ctx.fillRect(pipeX, topPipeBottomY + pipeGap, pipeWidth, canvasSize); // draw bottom pipe 
 
-    ctx.fillStyle = "black"; // score count collor 
-    bestScore = bestScore < score ? score : bestScore;
-    ctx.fillText(score++, 9, 25); // score count & x y positions 
-    ctx.fillStyle = "blue";
-    ctx.fillText(`Best Score : ${bestScore}`, 9, 50); //bestScore x y positions 
-    console.log(bestScore);
+//     ctx.fillStyle = "black"; // score count collor 
+//     bestScore = bestScore < score ? score : bestScore;
+//     ctx.fillText(score++, 9, 25); // score count & x y positions 
+//     ctx.fillStyle = "blue";
+//     ctx.fillText(`Best Score : ${bestScore}`, 9, 50); //bestScore x y positions 
+//     console.log(bestScore);
    
-    (((birdY < topPipeBottomY || birdY > topPipeBottomY + pipeGap) && pipeX < birdSize * (524 / 374)) // bird hit pipe 
-        || birdY > canvasSize) &&  // bird falls off screen 
-        ((birDY = 0), (birdY = 200), (pipeX = canvasSize), (score = 0)); // bird dies score restarts to 0 
-}, interval);
+//     (((birdY < topPipeBottomY || birdY > topPipeBottomY + pipeGap) && pipeX < birdSize * (524 / 374)) // bird hit pipe 
+//         || birdY > canvasSize) &&  // bird falls off screen 
+//         ((birDY = 0), (birdY = 200), (pipeX = canvasSize), (score = 0)); // bird dies score restarts to 0 
+// }, interval);
+
+
+
+
+
+
+
+
+
 
 
 
