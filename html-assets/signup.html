@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="css-assets/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css-assets/index.css"/>
     <!-- index.css link -->
-    <link rel="stylesheet" type="text/css" href="css-assets/game.css" />
+    <link rel="stylesheet" type="text/css" href="/css-assets/signup.css" />
     <!-- game.css link -->
     <link
       href="https://fonts.googleapis.com/css?family=Teko:700"
@@ -17,11 +17,10 @@
     <!-- google font https link -->
     <title>Scary Bird Escape</title>
   </head>
-
   <head>
     <header>
-      <div class="header">
-        <img class="logo" src="images/bird.png" alt="nav bar logo" />
+      <div class="header-3">
+        <img class="logo-3" src="/images/bird.png" alt="nav bar logo"/>
 
         <nav>
           <!-- nav start -->
@@ -34,26 +33,22 @@
             </li>
           </ul>
         </nav>
-
-        <a href="html-assets/signup.html"
-          ><button> Sign Up </button>
-        </a>
+        <a href="/index.html"><button>Back To Flapping</button> </a> 
       </div>
       <!-- .header end-->
     </header>
   </head>
 
-  <body onclick="jump()">
-    <div id="game">
-      <div id="pipe1" class="obs"></div>
-      <div id="pipe2" class="obs"></div>
-      <div id="bird"><img src="images/bird.png" /></div>
-      <div id="score">SCORE: <span id="score"></span> </div>
-    </div>
+  <body> 
 
-    <canvas id="canvas" width="320" height="400"> </canvas>
+<div class="sign-up">
+  <h1> Sign Up Right Now </h1>
+  <form> 
+    <input type="email" class="input-box" placeholder="Your Email">
+    <input type="password" class="input-box" placeholder="Your Password">
+    <p> </p>
+  </form>
+</div>
 
-    <script src="js-assets/index.js"></script>
-    <!-- index.js script-->
   </body>
 </html>
